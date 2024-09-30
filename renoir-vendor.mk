@@ -509,6 +509,7 @@ PRODUCT_PACKAGES += \
     libarcsoft_super_night_raw \
     libbeauty_face_interface \
     libbitmlengine \
+    libbitmlenginev2 \
     libblink \
     libc++_shared \
     libcamera_dirty \
