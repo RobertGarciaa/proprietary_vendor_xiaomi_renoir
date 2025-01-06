@@ -6554,8 +6554,8 @@ cc_prebuilt_library_shared {
                 "libsynx",
                 "libcvface_api",
                 "libFlickerDet",
-                "libmegface",
-                "libMegviiFacepp-0.5.2",
+                "libfacedet",
+                "libFaceDetectpp-0.5.2",
                 "libtinyxml2",
                 "liblz4",
                 "libz",
@@ -6611,7 +6611,7 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.display.mapper@4.0",
                 "vendor.qti.hardware.display.mapperextensions@1.1",
                 "libcom.xiaomi.metadatautils",
-                "vendor.xiaomi.hardware.campostproc@1.0",
+                "vendor.xiaomi.hardware.campostproc@1.0_vendor",
                 "vendor.xiaomi.hardware.campostproc@1.0-service-impl",
                 "libcom.xiaomi.grallocutils",
                 "libcom.xiaomi.debug",
@@ -6806,6 +6806,33 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libc",
                 "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libFaceDetectpp-0.5.2",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libFaceDetectpp-0.5.2.so",
+            ],
+            shared_libs: [
+                "libfacedet",
+                "libc",
+                "libm",
+                "libdl",
+                "liblog",
+                "libEGL",
+                "libGLESv2",
             ],
         },
     },
@@ -8260,6 +8287,30 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libdl",
                 "libm",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libfacedet",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libfacedet.so",
+            ],
+            shared_libs: [
+                "libm",
+                "liblog",
+                "libdl",
                 "libc",
             ],
         },
@@ -11007,7 +11058,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libgrallocutils",
                 "libmialgoengine",
-                "vendor.xiaomi.hardware.campostproc@1.0",
+                "vendor.xiaomi.hardware.campostproc@1.0_vendor",
                 "android.hardware.camera.common@1.0",
                 "android.hardware.graphics.mapper@3.0",
                 "libc++",
@@ -11023,7 +11074,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.xiaomi.hardware.campostproc@1.0",
+    name: "vendor.xiaomi.hardware.campostproc@1.0_vendor",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -11031,7 +11082,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0.so",
+                "proprietary/vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0_vendor.so",
             ],
             shared_libs: [
                 "android.hardware.camera.common@1.0",
